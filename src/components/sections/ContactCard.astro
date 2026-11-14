@@ -1,0 +1,24 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const email = 'dimacavi.dv@gmail.com';
+---
+
+<Card href={`mailto:${email}`} tone="mint" wide gap={8} justify="center">
+	<Eyebrow tone="mint">Contacto</Eyebrow>
+	<span class="title">¿Hablamos? →</span>
+	<span class="email">{email}</span>
+</Card>
+
+<style>
+	.title {
+		font-size: 26px;
+		font-weight: 700;
+	}
+
+	.email {
+		font-size: 16px;
+		color: var(--ink-soft);
+	}
+</style>

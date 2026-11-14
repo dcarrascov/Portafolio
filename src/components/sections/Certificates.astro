@@ -1,0 +1,67 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const certificates: { title: string; meta: string; href?: string }[] = [
+	{
+		title: 'SSH: imprescindible en tiempos modernos',
+		meta: 'OpenWebinars · 2024',
+		href: 'https://openwebinars.net/cert/AMmz',
+	},
+];
+---
+
+<Card wide>
+	<Eyebrow>Certificados</Eyebrow>
+	<div class="list">
+		{
+			certificates.map((certificate) => {
+				const Row = certificate.href ? 'a' : 'div';
+				return (
+					<Row class="row" href={certificate.href}>
+						<span class="title">
+							{certificate.title}
+							{certificate.href && <span class="arrow">→</span>}
+						</span>
+						<span class="meta">{certificate.meta}</span>
+					</Row>
+				);
+			})
+		}
+	</div>
+</Card>
+
+<style>
+	.list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+		padding: 14px 0;
+		border-top: 1px solid var(--line);
+		text-decoration: none;
+	}
+
+	.row:last-child {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.title {
+		font-weight: 600;
+	}
+
+	.arrow {
+		color: var(--accent);
+	}
+
+	.meta {
+		font-size: 14px;
+		color: var(--ink-muted);
+	}
+</style>

@@ -1,0 +1,38 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const project = {
+	label: 'Proyecto destacado',
+	title: 'TrainZone',
+	description:
+		'Me encargo de la parte tecnológica de un centro de entrenamiento: su web, su nueva webapp y todo el soporte informático.',
+	tech: 'Astro · HTML · CSS',
+	href: 'https://trainzone.es',
+};
+---
+
+<Card href={project.href} tone="accent" wide gap={10}>
+	<Eyebrow tone="inherit">{project.label}</Eyebrow>
+	<span class="title">{project.title} →</span>
+	<span class="description">{project.description}</span>
+	<span class="tech">{project.tech}</span>
+</Card>
+
+<style>
+	.title {
+		font-size: 30px;
+		font-weight: 700;
+	}
+
+	.description {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.tech {
+		font-size: 13px;
+		font-weight: 600;
+		opacity: 0.9;
+	}
+</style>

@@ -1,0 +1,45 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const stack = [
+	'Java',
+	'Kotlin',
+	'JavaScript',
+	'TypeScript',
+	'Python',
+	'PHP',
+	'SQL',
+	'HTML',
+	'CSS',
+	'Angular',
+	'Astro',
+	'Svelte',
+	'PocketBase',
+	'Docker',
+	'Git',
+];
+---
+
+<Card wide>
+	<Eyebrow>Stack</Eyebrow>
+	<div class="chips">
+		{stack.map((technology) => <span class="chip">{technology}</span>)}
+	</div>
+</Card>
+
+<style>
+	.chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.chip {
+		padding: 8px 14px;
+		border-radius: 999px;
+		background: var(--bg);
+		font-size: 14px;
+		font-weight: 500;
+	}
+</style>

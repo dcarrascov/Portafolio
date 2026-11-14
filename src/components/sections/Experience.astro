@@ -1,0 +1,20 @@
+---
+import TimelineCard from '../cards/TimelineCard.astro';
+
+const experience = [
+	{
+		title: 'TrainZone',
+		meta: 'Desarrollador web e informático · ago 2026 – actualidad',
+		description:
+			'Mantenimiento de la web, desarrollo de una webapp para gestionar reservas, planificación semanal y entrenamientos, y soporte informático de la empresa.',
+	},
+	{
+		title: 'Autos Vocación',
+		meta: 'Desarrollo web · Freelance · jun – jul 2026',
+		description:
+			'Construcción e implementación de la web de la empresa, desde el diseño hasta su publicación.',
+	},
+];
+---
+
+<TimelineCard label="Experiencia" items={experience} />

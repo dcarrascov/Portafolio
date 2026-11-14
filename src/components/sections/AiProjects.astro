@@ -1,0 +1,95 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+const aiProjects = {
+	label: 'Proyectos con IA · Públicos',
+	intro:
+		'Mi laboratorio. Aquí pruebo ideas con IA en mi tiempo libre y las convierto en herramientas. Las publico por si le resultan útiles a alguien.',
+	items: [
+		{
+			title: 'Suunto Stats',
+			description:
+				'Panel de entrenamiento autoalojado para corredores con reloj Suunto: zonas, récords, predicciones y un entrenador con IA. Funciona en local o en la nube, protegido con login de seguridad mediante Authelia.',
+			href: 'https://github.com/dcarrascov/Suunto-App',
+		},
+		{
+			title: 'Switchify',
+			description:
+				'Utilidad para Windows que convierte imágenes, documentos, vídeo y audio desde un menú circular.',
+			href: 'https://github.com/dcarrascov/Switchify',
+		},
+		{
+			title: 'Ladrones de Banco',
+			description:
+				'App de iPhone para llevar la cuenta de quién te debe dinero, con pagos parciales y recordatorios.',
+			href: 'https://github.com/dcarrascov/LadronesDeBanco',
+		},
+	],
+};
+---
+
+<Card wide>
+	<Eyebrow>{aiProjects.label}</Eyebrow>
+	<span class="intro">{aiProjects.intro}</span>
+	<div class="list">
+		{
+			aiProjects.items.map((item) => (
+				<a class="row" href={item.href}>
+					<span class="text">
+						<span class="title">{item.title}</span>
+						<span class="description">{item.description}</span>
+					</span>
+					<span class="arrow">→</span>
+				</a>
+			))
+		}
+	</div>
+</Card>
+
+<style>
+	.intro {
+		font-size: 15px;
+		line-height: 1.5;
+		color: var(--ink-muted);
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 16px;
+		padding: 14px 0;
+		border-top: 1px solid var(--line);
+		text-decoration: none;
+	}
+
+	.row:last-child {
+		border-bottom: 1px solid var(--line);
+	}
+
+	.text {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.title {
+		font-weight: 600;
+	}
+
+	.description {
+		font-size: 14px;
+		line-height: 1.5;
+		color: var(--ink-muted);
+	}
+
+	.arrow {
+		color: var(--accent);
+	}
+</style>

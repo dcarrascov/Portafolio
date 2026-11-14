@@ -1,0 +1,38 @@
+---
+const name = 'Diego M. Carrasco Villarán';
+const email = 'dimacavi.dv@gmail.com';
+---
+
+<header class="header">
+	<span class="name">{name}</span>
+	<a class="cta" href={`mailto:${email}`}>Contáctame</a>
+</header>
+
+<style>
+	.header {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 32px;
+	}
+
+	.name {
+		font-weight: 700;
+		font-size: 18px;
+	}
+
+	.cta {
+		display: inline-flex;
+		align-items: center;
+		min-height: 44px;
+		padding: 0 20px;
+		border-radius: 999px;
+		background: var(--dark);
+		color: #ffffff;
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 500;
+	}
+</style>

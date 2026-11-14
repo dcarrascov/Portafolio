@@ -1,0 +1,89 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'div'> {
+	href?: string;
+	tone?: 'light' | 'accent' | 'dark' | 'mint';
+	padding?: number;
+	gap?: number;
+	justify?: 'start' | 'between' | 'center';
+	wide?: boolean;
+	tall?: boolean;
+}
+
+const {
+	href,
+	tone = 'light',
+	padding = 32,
+	gap = 16,
+	justify = 'start',
+	wide = false,
+	tall = false,
+	class: className,
+	...rest
+} = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+	{...rest}
+	href={href}
+	class:list={['card', tone, justify, { wide, tall }, className]}
+	style={{ padding: `${padding}px`, gap: `${gap}px` }}
+>
+	<slot />
+</Tag>
+
+<style>
+	.card {
+		display: flex;
+		flex-direction: column;
+		border-radius: 24px;
+		text-decoration: none;
+	}
+
+	.light {
+		background: var(--surface);
+	}
+
+	.accent {
+		background: var(--accent-2);
+		color: #ffffff;
+	}
+
+	.dark {
+		background: var(--dark);
+		color: #ffffff;
+	}
+
+	.mint {
+		background: var(--mint);
+	}
+
+	.between {
+		justify-content: space-between;
+	}
+
+	.center {
+		justify-content: center;
+	}
+
+	.wide {
+		grid-column: span 2;
+	}
+
+	.tall {
+		grid-row: span 2;
+	}
+
+	@media (max-width: 760px) {
+		.wide {
+			grid-column: auto;
+		}
+
+		.tall {
+			grid-row: auto;
+		}
+	}
+</style>

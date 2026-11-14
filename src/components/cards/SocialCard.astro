@@ -1,0 +1,42 @@
+---
+import Card from '../ui/Card.astro';
+
+interface Props {
+	href: string;
+	title: string;
+	subtitle: string;
+	tone?: 'light' | 'dark';
+}
+
+const { href, title, subtitle, tone = 'light' } = Astro.props;
+---
+
+<Card class="social" href={href} tone={tone} padding={28} gap={24} justify="between">
+	<slot />
+	<span>
+		<span class="title">{title} →</span>
+		<span class:list={['subtitle', tone]}>{subtitle}</span>
+	</span>
+</Card>
+
+<style>
+	.social {
+		min-height: 160px;
+		box-sizing: border-box;
+	}
+
+	.title {
+		display: block;
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	.subtitle {
+		font-size: 14px;
+		color: var(--ink-muted);
+	}
+
+	.subtitle.dark {
+		color: #d6d3d1;
+	}
+</style>

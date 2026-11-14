@@ -1,0 +1,36 @@
+---
+import ProjectCard from '../cards/ProjectCard.astro';
+
+const projects = [
+	{
+		label: 'Web',
+		title: 'Autos Vocación',
+		description:
+			'Web para un concesionario de segunda mano con panel de gestión propio: la empresa sube y edita sus vehículos y crea promociones temporales sin depender de nadie.',
+		tech: 'PocketBase · Astro · HTML · CSS',
+		href: 'https://autosvocacion.es',
+	},
+	{
+		label: 'Web',
+		title: 'TrainZone',
+		description: 'Mejoras y mantenimiento de la web principal del centro de entrenamiento.',
+		tech: 'Astro · HTML · CSS',
+		href: 'https://trainzone.es',
+	},
+	{
+		label: 'Webapp',
+		title: 'Webapp TrainZone',
+		description:
+			'Una sola app para la empresa y sus clientes: reservas, planificación semanal y entrenamientos. En camino a producción en servidor propio (Oracle Cloud + Dokploy).',
+		tech: 'Svelte · TypeScript · JavaScript · HTML · CSS · Dokploy',
+	},
+	{
+		label: 'TFG · Próximamente',
+		title: 'DevShowcase',
+		description:
+			'Plataforma para dar visibilidad a proyectos de desarrolladores: búsqueda con filtros avanzados, perfiles con portfolio y ofertas para encontrar colaboradores.',
+	},
+];
+---
+
+{projects.map((project) => <ProjectCard {...project} />)}

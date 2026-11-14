@@ -1,0 +1,53 @@
+---
+import Card from '../ui/Card.astro';
+import Eyebrow from '../ui/Eyebrow.astro';
+
+interface Props {
+	label: string;
+	items: { title: string; meta: string; description?: string }[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<Card wide gap={20}>
+	<Eyebrow>{label}</Eyebrow>
+	{
+		items.map((item) => (
+			<div class="item">
+				<span class="title">{item.title}</span>
+				<span class="meta">{item.meta}</span>
+				{item.description && <span class="description">{item.description}</span>}
+			</div>
+		))
+	}
+</Card>
+
+<style>
+	.item {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.item + .item {
+		padding-top: 20px;
+		border-top: 1px solid var(--line);
+	}
+
+	.title {
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	.meta {
+		font-size: 14px;
+		color: var(--ink-muted);
+	}
+
+	.description {
+		font-size: 15px;
+		line-height: 1.5;
+		color: var(--ink-soft);
+	}
+</style>

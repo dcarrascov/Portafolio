@@ -126,10 +126,11 @@ const profile = {
 			gap: 12px;
 		}
 
+		/* Crece con la pantalla sin quitarle sitio al badge de prácticas */
 		.photo {
 			flex-shrink: 0;
-			width: 72px;
-			height: 72px;
+			width: clamp(72px, 100vw - 288px, 96px);
+			height: clamp(72px, 100vw - 288px, 96px);
 		}
 
 		.badges {

@@ -11,7 +11,7 @@ interface Props {
 const { href, title, subtitle, tone = 'light' } = Astro.props;
 ---
 
-<Card class="social" href={href} tone={tone} padding={28} gap={24} justify="between">
+<Card class="social" href={href} tone={tone} padding={24} gap={16} justify="between">
 	<slot />
 	<span>
 		<span class="title">{title} →</span>
@@ -21,7 +21,7 @@ const { href, title, subtitle, tone = 'light' } = Astro.props;
 
 <style>
 	.social {
-		min-height: 160px;
+		min-height: 120px;
 		box-sizing: border-box;
 	}
 

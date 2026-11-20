@@ -35,4 +35,23 @@ const email = 'dimacavi.dv@gmail.com';
 		font-size: 14px;
 		font-weight: 500;
 	}
+
+	@media (max-width: 760px) {
+		.header {
+			flex-wrap: nowrap;
+			gap: 12px;
+		}
+
+		.name {
+			min-width: 0;
+			font-size: 15px;
+		}
+
+		.cta {
+			flex-shrink: 0;
+			min-height: 36px;
+			padding: 0 14px;
+			font-size: 13px;
+		}
+	}
 </style>

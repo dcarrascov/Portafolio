@@ -30,7 +30,7 @@ const Tag = href ? 'a' : 'div';
 	{...rest}
 	href={href}
 	class:list={['card', tone, justify, { wide, tall }, className]}
-	style={{ padding: `${padding}px`, gap: `${gap}px` }}
+	style={{ '--pad': `${padding}px`, gap: `${gap}px` }}
 >
 	<slot />
 </Tag>
@@ -39,6 +39,7 @@ const Tag = href ? 'a' : 'div';
 	.card {
 		display: flex;
 		flex-direction: column;
+		padding: var(--pad);
 		border-radius: 24px;
 		text-decoration: none;
 	}
@@ -78,6 +79,11 @@ const Tag = href ? 'a' : 'div';
 	}
 
 	@media (max-width: 760px) {
+		/* Un componente puede reducir su relleno en móvil con --pad-mobile */
+		.card {
+			padding: var(--pad-mobile, var(--pad));
+		}
+
 		.wide {
 			grid-column: auto;
 		}

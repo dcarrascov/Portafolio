@@ -26,6 +26,7 @@ const aiProjects = {
 			href: 'https://github.com/dcarrascov/LadronesDeBanco',
 		},
 	],
+	github: { url: 'https://github.com/dcarrascov', handle: '@dcarrascov' },
 };
 ---
 
@@ -45,6 +46,9 @@ const aiProjects = {
 			))
 		}
 	</div>
+	<a class="more" href={aiProjects.github.url}>
+		Y mucho más en mi GitHub <strong>{aiProjects.github.handle}</strong>
+	</a>
 </Card>
 
 <style>
@@ -91,5 +95,20 @@ const aiProjects = {
 
 	.arrow {
 		color: var(--accent);
+	}
+
+	.more {
+		font-size: 14px;
+		color: var(--ink-muted);
+		text-decoration: none;
+	}
+
+	.more strong {
+		font-weight: 600;
+		color: var(--ink);
+	}
+
+	.more:hover strong {
+		text-decoration: underline;
 	}
 </style>

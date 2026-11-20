@@ -12,7 +12,7 @@ const profile = {
 };
 ---
 
-<Card class="hero" wide tall padding={40} gap={32} justify="between">
+<Card class="hero" wide tall padding={40} gap={20} justify="center">
 	<div class="top">
 		<img
 			class="photo"
@@ -49,10 +49,6 @@ const profile = {
 </Card>
 
 <style>
-	.hero {
-		min-height: 380px;
-	}
-
 	.top {
 		display: flex;
 		flex-wrap: wrap;
@@ -117,5 +113,45 @@ const profile = {
 		font-size: 18px;
 		line-height: 1.6;
 		color: var(--ink-muted);
+	}
+
+	@media (max-width: 760px) {
+		.hero {
+			--pad-mobile: 20px;
+		}
+
+		.top {
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			gap: 12px;
+		}
+
+		.photo {
+			flex-shrink: 0;
+			width: 72px;
+			height: 72px;
+		}
+
+		.badges {
+			min-width: 0;
+			align-items: flex-start;
+			gap: 8px;
+		}
+
+		.location {
+			font-size: 14px;
+		}
+
+		.status {
+			gap: 6px;
+			padding: 6px 9px;
+			font-size: 12px;
+		}
+
+		.dot {
+			flex-shrink: 0;
+			width: 6px;
+			height: 6px;
+		}
 	}
 </style>

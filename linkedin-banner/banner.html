@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Banner LinkedIn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&display=block">
+<style>
+	/* Medida oficial de la portada de LinkedIn: 1584 × 396 */
+	:root {
+		--bg: #f5efe6;
+		--dot: #e4dacb;
+		--ink: #1c1917;
+		--muted: #57534e;
+		--accent: #c2410c;
+		--accent-2: #0f766e;
+		--editor: #1c1917;
+		--editor-bar: #292524;
+		--gutter: #57534e;
+		--code: #e7e5e4;
+		--kw: #fb923c;
+		--type: #fde68a;
+		--str: #5eead4;
+		--comment: #8a837c;
+		--anno: #fcd34d;
+		--fn: #93c5fd;
+	}
+
+	* { box-sizing: border-box; }
+
+	html, body {
+		margin: 0;
+		width: 1584px;
+		height: 396px;
+		overflow: hidden;
+	}
+
+	body {
+		position: relative;
+		background-color: var(--bg);
+		background-image: radial-gradient(var(--dot) 1.6px, transparent 1.6px);
+		background-size: 24px 24px;
+		font-family: Inter, sans-serif;
+		color: var(--ink);
+	}
+
+	/* Arriba a la izquierda: la foto de perfil tapa la parte de abajo */
+	.intro {
+		position: absolute;
+		top: 44px;
+		left: 56px;
+		width: 470px;
+	}
+
+	.prompt {
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 15px;
+		font-weight: 600;
+		color: var(--accent-2);
+		letter-spacing: 0.02em;
+	}
+
+	.role {
+		margin: 10px 0 0;
+		font-size: 44px;
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+		font-weight: 700;
+	}
+
+	.cursor {
+		display: inline-block;
+		width: 18px;
+		height: 38px;
+		margin-left: 6px;
+		vertical-align: -4px;
+		background: var(--accent);
+		border-radius: 2px;
+	}
+
+	.meta {
+		margin-top: 14px;
+		font-size: 17px;
+		font-weight: 500;
+		color: var(--muted);
+	}
+
+	.meta b {
+		color: var(--ink);
+		font-weight: 600;
+	}
+
+	/* Ventana del editor */
+	.editor {
+		position: absolute;
+		top: 34px;
+		right: 44px;
+		width: 960px;
+		height: 328px;
+		border-radius: 18px;
+		background: var(--editor);
+		box-shadow: 0 24px 48px -16px rgba(41, 37, 36, 0.45), 0 2px 6px rgba(41, 37, 36, 0.2);
+		overflow: hidden;
+	}
+
+	.bar {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		height: 40px;
+		padding: 0 18px;
+		background: var(--editor-bar);
+	}
+
+	.dots { display: flex; gap: 8px; }
+	.dots span { width: 12px; height: 12px; border-radius: 50%; }
+	.dots span:nth-child(1) { background: var(--accent); }
+	.dots span:nth-child(2) { background: #d6a84a; }
+	.dots span:nth-child(3) { background: var(--accent-2); }
+
+	.tab {
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 13px;
+		color: #d6d3d1;
+		padding: 6px 12px;
+		border-radius: 8px;
+		background: var(--editor);
+	}
+
+	.tab::before {
+		content: '';
+		display: inline-block;
+		width: 8px;
+		height: 8px;
+		margin-right: 10px;
+		border-radius: 50%;
+		background: var(--kw);
+		vertical-align: 1px;
+	}
+
+	pre {
+		margin: 0;
+		padding: 16px 0;
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 16px;
+		line-height: 20.5px;
+		color: var(--code);
+		counter-reset: line;
+	}
+
+	.l {
+		display: block;
+		padding-right: 24px;
+		white-space: pre;
+	}
+
+	.l::before {
+		counter-increment: line;
+		content: counter(line);
+		display: inline-block;
+		width: 52px;
+		margin-right: 20px;
+		text-align: right;
+		color: var(--gutter);
+	}
+
+	.kw { color: var(--kw); }
+	.ty { color: var(--type); }
+	.st { color: var(--str); }
+	.cm { color: var(--comment); font-style: italic; }
+	.an { color: var(--anno); }
+	.fn { color: var(--fn); }
+</style>
+</head>
+<body>
+	<div class="intro">
+		<div class="prompt">~/diego $ whoami</div>
+		<p class="role">Desarrollador Java<span class="cursor"></span></p>
+		<div class="meta"><b>Huelva</b> · diegocv.es</div>
+	</div>
+
+	<div class="editor">
+		<div class="bar">
+			<div class="dots"><span></span><span></span><span></span></div>
+			<div class="tab">DiegoCarrasco.java</div>
+		</div>
+<pre><span class="l"><span class="cm">// Hola, soy Diego M. Carrasco Villarán. Aprendo cada día y lo convierto en proyectos.</span></span><span class="l"><span class="kw">public class</span> <span class="ty">DiegoCarrasco</span> <span class="kw">extends</span> <span class="ty">Developer</span> {</span><span class="l"></span><span class="l">    <span class="ty">String</span> ubicacion = <span class="st">"Huelva"</span>;</span><span class="l">    <span class="ty">String</span> formacion = <span class="st">"DAM (en curso)"</span>;</span><span class="l">    <span class="ty">List</span>&lt;<span class="ty">String</span>&gt; stack = <span class="ty">List</span>.<span class="fn">of</span>(<span class="st">"Java"</span>, <span class="st">"Spring Boot"</span>, <span class="st">"Hibernate"</span>, <span class="st">"Docker"</span>);</span><span class="l"></span><span class="l">    <span class="an">@Override</span></span><span class="l">    <span class="kw">public</span> <span class="ty">Estado</span> <span class="fn">estado</span>() {</span><span class="l">        <span class="kw">return</span> <span class="ty">Estado</span>.BUSCANDO_PRACTICAS_FCT;</span><span class="l">    }</span><span class="l">}</span></pre>
+	</div>
+</body>
+</html>
